@@ -42,7 +42,7 @@ for link in links:
     soup = BeautifulSoup(res.text, 'html.parser')
 
     if L == '/bbs/Beauty/M.1443906121.A.65B.html' :
-        print('-----------------公告-------------------------')
+        print('-----------------公告-------------------------跳出停止')
         break
 
     images = soup.select('a[href^=http://i.imgur]')
@@ -68,4 +68,4 @@ for link in links:
         with open(path +'/' + str(filename),'wb') as f:
             f.write(img.read())
 
-## Test for git
+## Test for githttps://github.com/gh286991/Ptt_Beauty_Crawler.git
