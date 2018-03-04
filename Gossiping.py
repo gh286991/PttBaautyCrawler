@@ -41,6 +41,10 @@ for link in links:
 
     soup = BeautifulSoup(res.text, 'html.parser')
 
+    if L == '/bbs/Beauty/M.1443906121.A.65B.html' :
+        print('-----------------公告-------------------------')
+        break
+
     images = soup.select('a[href^=http://i.imgur]')
     #print('內容:' ,len(images))
     if len(images) ==  0 :
