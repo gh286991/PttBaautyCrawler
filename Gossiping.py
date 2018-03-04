@@ -45,8 +45,9 @@ for link in links:
     #print('內容:' ,len(images))
     if len(images) ==  0 :
        images = soup.select('a[href^=https://i.imgur]')
-        if len(images) ==  0 :
-            images = soup.select('a[href^=https://imgur]')
+
+    if len(images) ==  0 :
+        images = soup.select('a[href^=https://imgur]')
             
     for image in images:
 
@@ -63,3 +64,4 @@ for link in links:
         with open(path +'/' + str(filename),'wb') as f:
             f.write(img.read())
 
+## Test for git
