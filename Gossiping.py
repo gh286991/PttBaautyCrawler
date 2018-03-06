@@ -34,7 +34,7 @@ for item in items:
 
 for link in links:
     L = link.get('href')
-    T2 = link.text
+    T2 = link.text.strip()
     print('標題 :' ,T2,'link =', 'https://www.ptt.cc/'+ L )
 
     res = requests.get('https://www.ptt.cc/'+L, headers =headers)
