@@ -68,11 +68,9 @@ for link in links:
         with open(path +'/' + str(filename),'wb') as f:
             f.write(img.read())
 
-''''
+'''
 git https://github.com/gh286991/Ptt_Beauty_Crawler.git
 Bug 1 : 網頁裡面的imgur格式不一樣,會只下載一種格式的
-Bug 2 : 回文裡面有 https://i.imgur 下載時會錯誤
-Iusse 1 : Date 還有作者資料可以加進去看看
-''''
-
-ddf
+Bug 2 : 回文裡面有 https://i.imgur 下載時會錯誤 >>> 可以用 Strip()
+Iusse 1 : Date 還有作者資料可以加進去看看  .a.get('href')
+'''
