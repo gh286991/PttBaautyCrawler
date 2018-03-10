@@ -16,7 +16,7 @@ headers = {
 rs = requests.Session()
 
 rs.post('https://www.ptt.cc/ask/over18',data = payload , headers= headers )
-res = rs.get('https://www.ptt.cc/bbs/Beauty/index.html',headers= headers)
+res = rs.get('https://www.ptt.cc/bbs/Beauty/index2417.html',headers= headers)
 #print(res.text)
 
 soup = BeautifulSoup(res.text, 'html.parser')
@@ -54,9 +54,16 @@ for link in links:
         images = soup.select('a[href^=https://imgur]')
             
     for image in images:
+        href = str(image['href'])
 
-        print(image['href'])
-        filename = image['href'].split('/')[3]
+     
+        print (href.find('.jpg'))
+
+        if href.find('.jpg') == -1 :
+            href= href + '.jpg'
+
+        print(href)
+        filename = href.split('/')[3]
         print(filename)
 
         path = "./images/"+T2
@@ -64,7 +71,7 @@ for link in links:
             os.mkdir(path)
         
         print(path)
-        img = urlopen(image['href'])
+        img = urlopen(href)
         with open(path +'/' + str(filename),'wb') as f:
             f.write(img.read())
 
@@ -72,5 +79,6 @@ for link in links:
 git https://github.com/gh286991/Ptt_Beauty_Crawler.git
 Bug 1 : 網頁裡面的imgur格式不一樣,會只下載一種格式的
 Bug 2 : 回文裡面有 https://i.imgur 下載時會錯誤 >>> 可以用 Strip()
+Bug 3: 後面沒JPG會當機.... >> 已修正
 Iusse 1 : Date 還有作者資料可以加進去看看  .a.get('href')
 '''
