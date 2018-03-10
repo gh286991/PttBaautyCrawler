@@ -16,7 +16,7 @@ headers = {
 rs = requests.Session()
 
 rs.post('https://www.ptt.cc/ask/over18',data = payload , headers= headers )
-res = rs.get('https://www.ptt.cc/bbs/Beauty/index2417.html',headers= headers)
+res = rs.get('https://www.ptt.cc/bbs/Beauty/index.html',headers= headers)
 #print(res.text)
 
 soup = BeautifulSoup(res.text, 'html.parser')
@@ -81,4 +81,7 @@ Bug 1 : 網頁裡面的imgur格式不一樣,會只下載一種格式的
 Bug 2 : 回文裡面有 https://i.imgur 下載時會錯誤 >>> 可以用 Strip()
 Bug 3: 後面沒JPG會當機.... >> 已修正
 Iusse 1 : Date 還有作者資料可以加進去看看  .a.get('href')
+
+pookoljkjkjkjk
+ss
 '''
